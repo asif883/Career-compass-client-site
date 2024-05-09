@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './Css/nav.css'
 
 const Navbar = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
                     </ul>
                     </ul>
                     </div>
-                    <a className="text-5xl font-bold"><span className="text-[#5BBC2E]">R</span>emotib</a>
+                    <Link to='/' className="text-4xl font-bold"><span className="text-[#5BBC2E]">Car</span>eer<span className="text-[#5BBC2E]">-</span>Compa<span className="text-[#5BBC2E]">ss</span></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 pt-4">
@@ -36,8 +36,10 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white mr-4">Register</button>
-                    <button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">Login</button>
+                    <Link to='register'><button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white mr-4">Register</button>
+                    </Link>
+                    <Link to='/login'><button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">Login</button>
+                    </Link>
                 </div>
         </div>
        </div>
