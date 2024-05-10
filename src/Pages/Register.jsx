@@ -1,18 +1,84 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoIosEyeOff,IoMdEye  } from "react-icons/io";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../Provider/Context";
 
 
 const Register = () => {
 
+    const { createUser } =useContext(AuthContext)
+
 
     const[password, setPassword] =useState('');
+    const [message , setMessage] = useState('')
 
     const [showPassword, setShowPassword] =useState(false)
 
     const handleChange= (e)=>{
         setPassword(e.target.value)
-    }
+    };
+
+    const handleRegister = e=> {
+        e.preventDefault();
+        const form = new FormData (e.currentTarget)
+        const email = form.get('email');
+        const password = form.get('password');
+        
+            console.log (email, password);
+        
+            const regExp =/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/
+            if(password === ""){
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Please enter a Strong Password',
+                    icon: 'error',
+                    confirmButtonText: 'Try again'
+                })
+                
+             } 
+            else if(regExp.test(password)){
+                
+                setMessage('Password is Valid')
+                
+             } 
+            else if(!regExp.test(password)){
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Password is not Valid. Password Must have an Uppercase and Lowercase letter , Length must be at least 6 character',
+                    icon: 'error',
+                    confirmButtonText: 'Try again'
+                })
+                return
+        }
+          createUser(email,password)
+          .then(result =>{
+            console.log(result.user)
+            
+            Swal.fire({
+                title: 'Success!',
+                text: 'Registration Successful',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+              });
+          })
+          .catch (error =>{
+            console.error( error.message)
+            Swal.fire({
+                title: 'Error!',
+                text: `${error.message}`,
+                icon: 'error',
+                confirmButtonText: 'Try again'
+              })
+            
+        })  
+        
+        setMessage("")
+      }
+     
+
+
+
     return (
         <div>
             
@@ -22,7 +88,7 @@ const Register = () => {
                 <h1 className="text-4xl text-[#5BBC2E] font-bold">Register Now</h1>
 
 
-                <form  className="card-body">
+                <form onSubmit={handleRegister}  className="card-body">
                         <div className="form-control">
                             <label className="label ">
                                 <span className="label-text text-xl font-semibold">Name</span>
@@ -70,7 +136,7 @@ const Register = () => {
                             <a className="label-text-alt text-lg">Already have an account? Please <Link to='/login' className="underline text-green-600">Login</Link></a>
                         </label>
                  </form>
-                
+               <p>{message}</p>
             </div>
             
         </div>

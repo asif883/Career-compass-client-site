@@ -3,8 +3,8 @@ import './Css/nav.css'
 
 const Navbar = () => {
     return (
-       <div className="max-w-7xl mx-auto">
-             <div className="navbar ">
+       <div className="">
+             <div className="navbar max-w-7xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
