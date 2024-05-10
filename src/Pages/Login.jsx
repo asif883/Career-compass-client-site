@@ -2,16 +2,72 @@ import { IoIosEyeOff,IoMdEye  } from "react-icons/io";
 
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../Provider/Context";
 
 const Login = () => {
+
+    const {  logIN,  googleLogin,  gitHubLogin,} =useContext(AuthContext)
+
+    const location =useLocation();
+    const navigate = useNavigate()
+
     const [showPassword, setShowPassword] =useState(false)
     const[password, setPassword] =useState('');
 
     const handleChange= (e)=>{
         setPassword(e.target.value)
     }
+
+
+    const handleLogin = e=>{
+        e.preventDefault();
+        const form = new FormData (e.currentTarget)
+        const email = form.get('email');
+        const password = form.get('password');
+        
+
+
+        logIN(email,password)
+        .then(result =>{
+            console.log(result.user);
+
+            Swal.fire({
+                title: 'Success!',
+                text: 'Login Successful',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+              });
+
+            navigate(location?.state ? location.state : '/');
+        })
+        .catch (error =>{
+            console.error( error)
+
+            Swal.fire({
+                title: 'Error!',
+                text: `${error.message}`,
+                icon: 'error',
+                confirmButtonText: 'Try again'
+              })
+        })
+
+     }
+     
+     const handleGoogleLogin =()=>{
+          googleLogin()
+          .then()
+          .catch()
+     }
+
+     const handleGithubLogin = () =>{
+        gitHubLogin()
+        .then()
+        .catch()
+     }
+
     return (
         <div>
             
@@ -19,7 +75,7 @@ const Login = () => {
             <div className="text-center">
                 <h1 className="text-4xl text-[#5BBC2E] font-bold">Login Now</h1>
             </div>
-        <form  className="card-body">
+        <form onSubmit={handleLogin}  className="card-body">
                 <div className="form-control">
                 <label className="label">
                     <span className="label-text text-xl font-semibold">Email</span>
@@ -57,10 +113,10 @@ const Login = () => {
         <div className="">
                       <h1 className="text-center font-semibold">Or, Login with</h1>
                     <div className="text-center mt-6 pb-8">
-                        <button className="mr-3 border border-green-300 p-1 rounded-xl">
+                        <button onClick={handleGoogleLogin} className="mr-3 border border-green-300 p-1 rounded-xl">
                             <FcGoogle className="w-10 h-10" />
                         </button>
-                        <button  className="mr-3 border border-green-300  p-1 rounded-xl">
+                        <button  onClick={handleGithubLogin} className="mr-3 border border-green-300  p-1 rounded-xl">
                             <FaGithub className="w-10 h-10"/>
                         </button>
                        
