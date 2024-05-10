@@ -80,11 +80,13 @@ const Register = () => {
 
 
     return (
-        <div>
+        <div className="flex items-center max-w-7xl mx-auto">
             
+            <div className="flex-1">
+                <img src="https://i.ibb.co/qyVw6GG/Sign-up-rafiki.png" alt="" />
+            </div>
             
-            
-            <div className="text-center max-w-lg mx-auto mt-16 shadow-xl rounded-lg pb-8">
+            <div className="text-center max-w-lg mt-16 shadow-xl rounded-lg pb-8 flex-1">
                 <h1 className="text-4xl text-[#5BBC2E] font-bold">Register Now</h1>
 
 

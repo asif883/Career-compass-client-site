@@ -69,9 +69,11 @@ const Login = () => {
      }
 
     return (
-        <div>
-            
-        <div className="max-w-md mx-auto mt-16 shadow-xl rounded-lg">
+        <div className="flex items-center max-w-7xl mx-auto">
+          <div className="flex-1">
+            <img className="h-4/6 w-4/5" src="https://i.ibb.co/LJ70cNL/Tablet-login-cuate.png" alt="" />
+        </div>  
+        <div className="max-w-md h-4/6 mt-16 shadow-xl rounded-lg flex-1">
             <div className="text-center">
                 <h1 className="text-4xl text-[#5BBC2E] font-bold">Login Now</h1>
             </div>
