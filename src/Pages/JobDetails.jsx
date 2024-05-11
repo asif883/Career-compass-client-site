@@ -1,7 +1,40 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../Provider/Context";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 
 const JobDetails = () => {
+
+    const {user} = useContext(AuthContext);
+
+    const handleAppliedJobs = event =>{
+        event.preventDefault()
+        const form = event.target;
+        const name = form.name.value;
+        const email = user?.email;
+        const resume = form.resume.value
+        
+        const appliedJobsInfo ={name,resume,email,job_title,banner,job_category}
+         
+        console.log(appliedJobsInfo);
+
+        axios.post('http://localhost:5000/appliedJobs', appliedJobsInfo)
+        .then(res =>{
+            const data = res.data;
+              if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'You have applied Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                  });
+              }
+
+        })
+
+    }
     const loadedJobs = useLoaderData()
    
     const {job_title,job_category,banner,deadline,salary_range,number,job_description} =loadedJobs
@@ -42,7 +75,34 @@ const JobDetails = () => {
                     </p> 
 
                     <div className="text-center pt-10">
-                     <button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">Apply Now</button> 
+                     {/* Open the modal using document.getElementById('ID').showModal() method */}
+                     {/* <button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">Apply Now</button>  */}
+                        <button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white" onClick={()=>document.getElementById('my_modal_1').showModal()}>Apply</button>
+                        <dialog id="my_modal_1" className="modal">
+                        <div className="modal-box">
+                              <form onSubmit={handleAppliedJobs}>
+                              <label className="input input-bordered flex items-center gap-2 mb-2"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" /><path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" /></svg>
+                                <input type="email" className="grow" defaultValue={user?.email} placeholder="Email" id="email" name="email"/>
+                                </label>
+                                <label className="input input-bordered flex items-center gap-2 mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" /></svg>
+                                <input type="text" className="grow" placeholder="Full Name" id="name" name="name"/>
+                                </label>
+                                <input type="file" className="file-input file-input-bordered file-input-sm w-full" id="resume"
+                                name="resume" />
+                                <button className="mt-5 w-full">
+                                    <input className="bg-[#5BBC2E] px-4 py-2  w-full rounded-lg font-semibold text-lg text-white" type="submit" value="Submit Your Resume" />
+                                </button>
+                              </form>
+                            <div className="modal-action">
+                            <form method="dialog">
+                                {/* if there is a button in form, it will close the modal */}
+                                <button className="border border-green-400 text-green-600 px-4 py-2 rounded-lg font-semibold text-lg ">Cancel</button>
+                            </form>
+                            </div>
+                        </div>
+                        </dialog>
                     </div>  
                 </div>
                </div>
