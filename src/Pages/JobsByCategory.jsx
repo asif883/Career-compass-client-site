@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -56,12 +57,12 @@ const JobsByCategory = () => {
             </TabList>
 
             <TabPanel>
-            <div className='mt-8'>
+            <div className='mt-8 grid gap-8 grid-cols-1 md:grid-cols-2'>
             {
-                displayJob?.map((job,idx) => 
-                <div className=' mb-4 grid gap-4 grid-cols-1 md:grid-cols-2' key={idx}>
+                jobs?.map((job,idx) => 
+                <div className=' mb-4 border border-green-300 rounded-xl ' key={idx}>
                    <div>
-                     <div className="card lg:card-side bg-base-100 shadow-xl">
+                     <div className="card lg:card-side  shadow-xl">
                       <figure><img className='w-60 h-full rounded-lg' src={job.banner} alt="Album"/></figure>
                       <div className="card-body">
                         <h2 className="card-title text-2xl">{job.job_title}</h2>
@@ -73,8 +74,10 @@ const JobsByCategory = () => {
                          
                        </div>
                         <div className="card-actions mt-3 justify-end">
-                         <button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">View Details</button>
-                        </div>
+                         <Link to={`/details/${job._id}`}><button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">View Details</button>
+                       
+                         </Link>
+                         </div>
                        </div>
                      </div>
                    </div>
@@ -83,12 +86,12 @@ const JobsByCategory = () => {
             </div>
             </TabPanel>
             <TabPanel>
-            <div className='mt-8'>
+            <div className='mt-8 grid gap-4 grid-cols-1 md:grid-cols-2'>
             {
                 displayJob?.map((job,idx) => 
-                <div className=' mb-4 grid gap-4 grid-cols-1 md:grid-cols-2' key={idx}>
+                <div className=' mb-4 ' key={idx}>
                    <div>
-                     <div className="card lg:card-side bg-base-100 shadow-xl">
+                     <div className="card lg:card-side  shadow-xl">
                       <figure><img className='w-60 h-full rounded-lg' src={job.banner} alt="Album"/></figure>
                       <div className="card-body">
                         <h2 className="card-title text-2xl">{job.job_title}</h2>
@@ -100,7 +103,9 @@ const JobsByCategory = () => {
                          
                        </div>
                         <div className="card-actions justify-end">
-                         <button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">View Details</button>
+                        <Link to={`/details/${job._id}`}><button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">View Details</button>
+                       
+                       </Link>
                         </div>
                        </div>
                      </div>
@@ -110,12 +115,12 @@ const JobsByCategory = () => {
             </div>
             </TabPanel>
             <TabPanel>
-            <div className='mt-8'>
+            <div className='mt-8 grid gap-4 grid-cols-1 md:grid-cols-2'>
             {
                 displayJob?.map((job,idx) => 
-                <div className=' mb-4 grid gap-4 grid-cols-1 md:grid-cols-2' key={idx}>
+                <div className=' mb-4 ' key={idx}>
                    <div>
-                     <div className="card lg:card-side bg-base-100 shadow-xl">
+                     <div className="card lg:card-side  shadow-xl">
                       <figure><img className='w-60 h-full rounded-lg' src={job.banner} alt="Album"/></figure>
                       <div className="card-body">
                         <h2 className="card-title text-2xl">{job.job_title}</h2>
@@ -127,7 +132,9 @@ const JobsByCategory = () => {
                          
                        </div>
                         <div className="card-actions justify-end">
-                         <button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">View Details</button>
+                        <Link to={`/details/${job._id}`}><button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">View Details</button>
+                       
+                       </Link>
                         </div>
                        </div>
                      </div>
@@ -137,12 +144,12 @@ const JobsByCategory = () => {
             </div>
             </TabPanel>
             <TabPanel>
-            <div className='mt-8'>
+            <div className='mt-8 grid gap-4 grid-cols-1 md:grid-cols-2'>
             {
                 displayJob?.map((job,idx) => 
-                <div className=' mb-4 grid gap-4 grid-cols-1 md:grid-cols-2' key={idx}>
+                <div className=' mb-4 ' key={idx}>
                    <div>
-                     <div className="card lg:card-side bg-base-100 shadow-xl">
+                     <div className="card lg:card-side  shadow-xl">
                       <figure><img className='w-60 h-full rounded-lg' src={job.banner} alt="Album"/></figure>
                       <div className="card-body">
                         <h2 className="card-title text-2xl">{job.job_title}</h2>
@@ -154,7 +161,9 @@ const JobsByCategory = () => {
                          
                        </div>
                         <div className="card-actions justify-end">
-                         <button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">View Details</button>
+                        <Link to={`/details/${job._id}`}><button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">View Details</button>
+                       
+                       </Link>
                         </div>
                        </div>
                      </div>
