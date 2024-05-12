@@ -12,7 +12,7 @@ const Footer = () => {
        <div className="mt-16">
        <footer className=" footer p-10 justify-between  max-w-7xl mx-auto">
             <aside>
-               <img className="w-20 h-20" src="https://i.ibb.co/9tMryJ6/1.png" alt="" />
+               <img className="w-20 h-20 rounded-full" src="https://i.ibb.co/9tMryJ6/1.png" alt="" />
                 <p>Career Compass Ltd.<br/>Providing best job opportunities since 2019</p>
             </aside> 
             <nav>

@@ -12,7 +12,7 @@ const AppliedJobs = () => {
        .then(res => res.json())
        .then(data => setAppliedJobs(data))
 
-    },[])
+    },[user])
    
     console.log(appliedJobs) 
     // const {name,email,job_title,banner,job_category} =appliedJobs;

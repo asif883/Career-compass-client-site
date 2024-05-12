@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Slide } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
 
 
@@ -40,9 +41,9 @@ const JobsByCategory = () => {
    
     return (
         <div className='mt-10 max-w-7xl mx-auto'>
-            <div className='text-center my-6'>
-                <h1 className='text-4xl font-bold'>Dream Jobs</h1>
-                <p className='text-lg text-gray-500 font-semibold'>Explore 1K+ job opportunities</p>
+            <div className='text-center my-8'>
+                <h1 className='text-4xl font-bold mb-2'>Featured Jobs</h1>
+                <p className='text-lg text-gray-500 font-semibold'>Know your worth and find the job that qualify your life</p>
             </div>
             
               
@@ -57,6 +58,7 @@ const JobsByCategory = () => {
             </TabList>
 
             <TabPanel>
+            <Slide direction='right' >
             <div className='mt-8 grid gap-8 grid-cols-1 md:grid-cols-2'>
             {
                 jobs?.map((job,idx) => 
@@ -84,6 +86,7 @@ const JobsByCategory = () => {
                </div>
              )}  
             </div>
+            </Slide>
             </TabPanel>
             <TabPanel>
             <div className='mt-8 grid gap-4 grid-cols-1 md:grid-cols-2'>
