@@ -40,22 +40,22 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 pt-4">
-                    <NavLink className='text-lg font-semibold mr-4 hover:underline' to="/"><li>Home</li></NavLink>
-                    <NavLink className='text-lg font-semibold mr-4 hover:underline' to="/all-jobs"><li>All Jobs</li></NavLink>
-                    <NavLink className='text-lg font-semibold mr-4 hover:underline' to="/applied-jobs"><li> Applied Jobs</li></NavLink>
+                    <NavLink className='text-lg font-medium mr-4 hover:underline' to="/"><li>Home</li></NavLink>
+                    <NavLink className='text-lg font-medium mr-4 hover:underline' to="/all-jobs"><li>All Jobs</li></NavLink>
+                    <NavLink className='text-lg font-medium mr-4 hover:underline' to="/applied-jobs"><li> Applied Jobs</li></NavLink>
                    
 
                      {
                         user ? <div className="flex">
                              
-                            <NavLink className='text-lg font-semibold mr-4 hover:underline' to="/add-job"><li>Add A Job</li></NavLink>
-                            <NavLink className='text-lg font-semibold mr-4 hover:underline' to="/my-jobs"><li> My Jobs</li></NavLink>
-                            <NavLink className='text-lg font-semibold mr-4 hover:underline' to="/profile"><li> Profile</li></NavLink>
+                            <NavLink className='text-lg font-medium mr-4 hover:underline' to="/add-job"><li>Add A Job</li></NavLink>
+                            <NavLink className='text-lg font-medium mr-4 hover:underline' to="/my-jobs"><li> My Jobs</li></NavLink>
+                            <NavLink className='text-lg font-medium mr-4 hover:underline' to="/profile"><li> Profile</li></NavLink>
                         </div>
                         : <p></p>
                      }
                     
-                    <NavLink className='text-lg font-semibold mr-4 hover:underline' to="/blogs"><li>Blogs</li></NavLink>
+                    <NavLink className='text-lg font-medium mr-4 hover:underline' to="/blogs"><li>Blogs</li></NavLink>
                     </ul>
                 </div>
                 <div className="navbar-end">
