@@ -6,6 +6,8 @@ import { AuthContext } from "../Provider/Context";
 const Navbar = () => {
     const {user,logOut,toggleDarkMode} =useContext(AuthContext);
 
+   
+
     const handleDarkMode=() =>{
         toggleDarkMode()
     }
@@ -51,6 +53,7 @@ const Navbar = () => {
                             <NavLink className='text-lg font-medium mr-4 hover:underline' to="/add-job"><li>Add A Job</li></NavLink>
                             <NavLink className='text-lg font-medium mr-4 hover:underline' to="/my-jobs"><li> My Jobs</li></NavLink>
                             <NavLink className='text-lg font-medium mr-4 hover:underline' to="/profile"><li> Profile</li></NavLink>
+                            
                         </div>
                         : <p></p>
                      }
@@ -61,8 +64,23 @@ const Navbar = () => {
                 <div className="navbar-end">
 
                     {
-                        user ? <Link><button onClick={handleLogout} className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">Sing Out</button>
-                        </Link>
+                        user ? <div className="dropdown dropdown-left ">
+                        <div tabIndex={0} role="button" className=" m-1">
+                            {
+                                user?.displayName ? <img className="w-12 h-12 border rounded-full" src={user?.photoURL} alt={user?.email} />
+
+                                :
+                                <img className="w-12 h-12 border rounded-full" src="https://i.ibb.co/yVMCWV5/images-3.png" alt={user?.email} />
+
+                            }
+                        </div>
+                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32">
+                            
+                            <Link><button onClick={handleLogout} className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">Sing Out</button>
+                            </Link>
+                            
+                        </ul>
+                       </div>
                         :
                         <div>
                         <Link to='register'><button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white mr-4">Register</button>
