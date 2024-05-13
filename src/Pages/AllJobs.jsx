@@ -1,3 +1,4 @@
+
 import {  Slide } from "react-awesome-reveal";
 import { Link, useLoaderData } from "react-router-dom";
 
@@ -5,7 +6,12 @@ import { Link, useLoaderData } from "react-router-dom";
 const AllJobs = () => {
     const jobs =useLoaderData();
 
+  
+
     return (
+
+       
+
         <div className="max-w-7xl mx-auto mt-16">
             <div className="text-center mb-5">
                 <h1 className="text-4xl font-bold text-[#5EBD31]">Find Your Dream Job</h1>
@@ -32,6 +38,8 @@ const AllJobs = () => {
             }
            </div>
            </Slide>
+
+           
         </div>
     );
 };

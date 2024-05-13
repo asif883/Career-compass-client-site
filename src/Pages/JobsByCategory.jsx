@@ -9,6 +9,12 @@ import 'react-tabs/style/react-tabs.css';
 
 const JobsByCategory = () => {
 
+  const [showAll, setShowAll] = useState(false);
+
+  const handleClick = () => {
+      setShowAll(!showAll);
+    };
+
     const [displayJob , setDisplayJob]= useState([])
     const [jobs, setJobs] =useState([]);
 
@@ -61,7 +67,7 @@ const JobsByCategory = () => {
             <Fade  >
             <div className='mt-8 grid gap-8 grid-cols-1 md:grid-cols-2'>
             {
-                jobs?.map((job,idx) => 
+                jobs?.slice(0, showAll ? jobs.length :4 )?.map((job,idx) => 
                 <div className=' mb-4 border border-green-300 rounded-xl ' key={idx}>
                   <Fade>
                   <div>
@@ -84,11 +90,24 @@ const JobsByCategory = () => {
                        </div>
                      </div>
                    </div>
+                   
                   </Fade>
+            
+                 
                </div>
+
              )}  
             </div>
             </Fade>
+            <div className="text-center mt-6">
+                {
+                    jobs?.length > 4 && (
+                        <button onClick={handleClick} className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">{
+                            showAll ? 'Show Less' : 'Show All'
+                        }</button>
+                    )
+                }
+            </div>
             </TabPanel>
             <TabPanel>
             <div className='mt-8 grid gap-4 grid-cols-1 md:grid-cols-2'>
