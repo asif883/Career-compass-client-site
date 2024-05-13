@@ -1,5 +1,5 @@
 
-import { Fade } from "react-awesome-reveal";
+import { Fade, Slide } from "react-awesome-reveal";
 import { MdDone } from "react-icons/md";
 import { Link } from "react-router-dom";
 const JobsOptions = () => {
@@ -7,13 +7,16 @@ const JobsOptions = () => {
         <div className="max-w-7xl mx-auto mt-10 lg:mt-20">
           <Fade delay={2}>
           <div className="flex gap-20 flex-col lg:flex-row">
-                 <div className="flex-1 relative">
+                  <Slide className="flex-1" direction="left">
+                  <div className=" relative">
                     <img src="https://i.ibb.co/PFqQSrn/work.jpg" alt="" />
                      <div className="absolute top-3/4 -right-1/4">
                         <img src="https://i.ibb.co/3d2jfR3/employers.png" alt="" />
                      </div>
                  </div>
-                <div className="flex-1">
+                  </Slide>
+                 <Slide className="flex-1" direction="right">
+                 <div>
                     <h1 className="text-4xl font-semibold">Millions of Jobs.Find the <br /> one that suits you.</h1>
                     <p className="text-lg text-gray-500 mt-4">
                         Search all the open positions on the web. Get your own
@@ -35,6 +38,7 @@ const JobsOptions = () => {
                       </Link>
                    </div>
                 </div>
+                 </Slide>
             </div>
           </Fade>
         </div>

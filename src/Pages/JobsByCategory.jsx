@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Slide } from 'react-awesome-reveal';
+import { Fade } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
 
 
@@ -58,12 +58,13 @@ const JobsByCategory = () => {
             </TabList>
 
             <TabPanel>
-            <Slide direction='right' >
+            <Fade  >
             <div className='mt-8 grid gap-8 grid-cols-1 md:grid-cols-2'>
             {
                 jobs?.map((job,idx) => 
                 <div className=' mb-4 border border-green-300 rounded-xl ' key={idx}>
-                   <div>
+                  <Fade>
+                  <div>
                      <div className="card lg:card-side  shadow-xl">
                       <figure><img className='w-60 h-full rounded-lg' src={job.banner} alt="Album"/></figure>
                       <div className="card-body">
@@ -83,10 +84,11 @@ const JobsByCategory = () => {
                        </div>
                      </div>
                    </div>
+                  </Fade>
                </div>
              )}  
             </div>
-            </Slide>
+            </Fade>
             </TabPanel>
             <TabPanel>
             <div className='mt-8 grid gap-4 grid-cols-1 md:grid-cols-2'>
