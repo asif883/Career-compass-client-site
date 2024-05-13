@@ -19,7 +19,17 @@ const AppliedJobs = () => {
     return (
        <div className="max-w-7xl mx-auto mt-10">
         <div className="text-center my-5 text-[#5BBC2E]">
-            <h1 className="text-4xl font-bold">The job You have Applied</h1>
+          {
+            appliedJobs?.length ? <h1 className="text-4xl font-bold">The job You have Applied</h1>
+            : 
+            <div className="text-center">
+                <h1 className="text-4xl font-bold">You have not Applied yet !! Confused ?</h1>
+                <img className="h-96 max-w-3xl mx-auto" src="https://i.ibb.co/6yHmQd3/Man-thinking-bro.png" alt="" />
+                <Link to='/all-jobs'>
+                    <button className="mt-5  px-6 py-3 rounded-lg font-semibold text-lg   border border-green-500 text-green-600 hover:bg-[#5BBC2E] hover:text-white">Click Here To Find Your Dream Job</button>
+                </Link>
+            </div>
+          }
         </div>
          <div className="grid gap-5 grid-cols-1 md:grid-cols-2">
             {
