@@ -1,5 +1,5 @@
 
-import  { useRef, } from 'react';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { MdOutlineSearch } from "react-icons/md";
@@ -9,32 +9,18 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 
 const Banner = () => {
 
-    
-    const progressCircle = useRef(null);
-    const progressContent = useRef(null);
-    const onAutoplayTimeLeft = (s, time, progress) => {
-      progressCircle.current.style.setProperty('--progress', 1 - progress);
-      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-    };
     return (
         <div className='mt-8'>
             <Swiper 
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        onAutoplayTimeLeft={onAutoplayTimeLeft}
+       pagination={{
+        type: 'progressbar',
+      }}
+      navigation={true}
+      modules={[Pagination, Navigation]}
         className="mySwiper h-[350px] lg:h-[700px]"
       >
      
@@ -108,14 +94,7 @@ const Banner = () => {
          </div>
           <img className='w-full h-[350px] lg:h-[700px]' src="https://i.ibb.co/kHKZw75/tech-sales-career-image.webp" alt="" />
           </SwiperSlide>
-     
-        <div className="autoplay-progress" slot="container-end">
-        <svg  ref={progressCircle}>
-            <circle></circle>
-          </svg>
-          <span ref={progressContent}></span>
-        </div>
-      </Swiper>
+          </Swiper>
         </div>
     );
 };
