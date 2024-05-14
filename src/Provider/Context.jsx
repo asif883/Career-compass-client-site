@@ -48,7 +48,7 @@ const Context = ({children}) => {
          return ()=>{
             unsubscribe()
          };
-    },[])
+    },[user])
 
 
     // register
