@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/Context";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -37,7 +37,24 @@ const JobDetails = () => {
     }
     const loadedJobs = useLoaderData()
    
-    const {job_title,job_category,banner,deadline,salary_range,number,job_description} =loadedJobs
+    const {job_title,job_category,banner,deadline,salary_range,number,job_description} =loadedJobs;
+
+    function getDate() {
+        const today = new Date();
+        const month = today.getMonth() + 1;
+        const year = today.getFullYear();
+        const date = today.getDate();
+        return `${year}-0${month}-${date}`;
+      }
+   
+      const [currentDate, setCurrentDate] = useState(getDate());
+      
+    
+      console.log(currentDate)
+      console.log(deadline)      
+    //   if(deadline === currentDate){
+    //      return <>Applied date is over</>
+    //   }
     return (
         <div className="max-w-7xl mx-auto">
             <div className="mt-8">
@@ -72,9 +89,14 @@ const JobDetails = () => {
                     <li>Deep knowledge of IT, including hardware, software, and networks</li>
                     <li>Meticulous eye for detail and an ability to multitask in a fast-paced environment</li>
                     <li>Strong abilities in critical thinking, problem-solving, logic, and forensics Preferred skills and qualifications</li>
-                    </p> 
+                    </p>
+                    <div className="text-center ">
 
-                    <div className="text-center pt-10">
+                    {
+                        deadline===currentDate ? <p className="text-xl font-semibold text-red-600 mt-16">Applied date is over <span className="text-xl font-semibold text-green-400 underline"><Link to='/all-jobs'>Try Another</Link></span> </p>
+                        :
+                        <>
+                         <div className="text-center pt-10">
                      {/* Open the modal using document.getElementById('ID').showModal() method */}
                      {/* <button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">Apply Now</button>  */}
                         <button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white" onClick={()=>document.getElementById('my_modal_1').showModal()}>Apply</button>
@@ -104,7 +126,14 @@ const JobDetails = () => {
                             </div>
                         </div>
                         </dialog>
-                    </div>  
+                        </div> 
+                        
+                        </>
+                      }
+                    {/*  */}
+                   </div> 
+                    
+                    
                 </div>
                </div>
             </div>

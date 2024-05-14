@@ -4,6 +4,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 
+
 const AddJob = () => {
 
   const handleInfoAdd = event =>{
@@ -18,9 +19,10 @@ const AddJob = () => {
       const email = user?.email;
       const name = form.user_name.value
       const job_description = form.job_description.value;
+      const date = form.date.value
 
 
-      const jobInfo ={job_title,job_category,banner,deadline,salary_range,number,email,name,job_description}
+      const jobInfo ={job_title,job_category,banner,deadline,salary_range,number,email,name,job_description,date}
 
       console.log(jobInfo)
 
@@ -62,9 +64,8 @@ const AddJob = () => {
   
                </div>
                   <div className="flex-1">
-                      
-                      <label className="font-medium">Application Deadline:</label><br />
-                      <input className="input input-bordered border border-green-500 w-full" type="text" id="deadline" name="deadline"  required />
+                      <label className="font-medium">Application Deadline:</label>  <br />
+                     <input className="input w-full input-bordered border  border-green-500 " type="date" name="deadline" id="deadline" />
                   </div>
            </div>
        
@@ -92,6 +93,11 @@ const AddJob = () => {
                   <input defaultValue={user?.displayName} className="input input-bordered border border-green-500  w-full" type="text" id="user_name" name="user_name"  required />
                   </div>
            </div>
+
+           <div className="w-1/2 mb-2 mt-1">
+                     <label className="font-medium">Post Date:</label>  <br />
+                     <input className="input w-full input-bordered border  border-green-500 " type="date" name="date" id="date" />
+            </div>
            
   
           <div>

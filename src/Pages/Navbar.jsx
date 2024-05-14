@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import './Css/nav.css'
 import { useContext } from "react";
 import { AuthContext } from "../Provider/Context";
+import { motion } from "framer-motion"
 
 const Navbar = () => {
     const {user,logOut,toggleDarkMode} =useContext(AuthContext);
@@ -83,9 +84,40 @@ const Navbar = () => {
                        </div>
                         :
                         <div>
-                        <Link to='register'><button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white mr-4">Register</button>
+                        <Link to='register'><motion.button 
+                        whileTap={{scale :0.9}}
+                        whileHover={{
+                            scale:1.1,
+                            backgroundColor:"#ffff",
+                            color:"#5BBC2E",
+                            borderColor:"#5BBC2E"
+                        }}
+                        style={{
+                            border: '2px solid transparent',
+                            borderRadius: '10px',
+                            padding: '10px 15px',
+                            cursor: 'pointer',
+                            outline: 'none',
+                            transition: 'border-color 0.2s ease-in-out, color 0.2s ease-in-out',
+                          }}
+                         className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white mr-4">Register</motion.button>
                         </Link>
-                        <Link to='/login'><button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">Login</button>
+                        <Link to='/login'><motion.button whileTap={{scale :0.9}}
+                        whileHover={{
+                            scale:1.1,
+                            backgroundColor:"#ffff",
+                            color:"#5BBC2E",
+                            borderColor:"#5BBC2E"
+                        }}
+                        style={{
+                            border: '2px solid transparent',
+                            borderRadius: '10px',
+                            padding: '10px 15px',
+                            cursor: 'pointer',
+                            outline: 'none',
+                            transition: 'border-color 0.3s ease-in-out, color 0.3s ease-in-out',
+                          }}
+                         className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">Login</motion.button>
                         </Link>
                       </div>
 

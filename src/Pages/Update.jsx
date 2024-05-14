@@ -95,10 +95,9 @@ const Update = () => {
                   <input className="input input-bordered border border-green-500  w-full" defaultValue={banner} type="text" id="banner" name="banner"  required />
   
                </div>
-                  <div className="flex-1">
-                      
-                      <label className="font-medium">Application Deadline:</label><br />
-                      <input className="input input-bordered border border-green-500 w-full" defaultValue={deadline} type="text" id="deadline" name="deadline"  required />
+               <div className="flex-1">
+                      <label className="font-medium">Application Deadline:</label>  <br />
+                     <input className="input w-full input-bordered border  border-green-500 " defaultValue={deadline} type="date" name="deadline" id="deadline" />
                   </div>
            </div>
        

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion"
 
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -79,11 +80,33 @@ const JobsByCategory = () => {
                         <li><span className='text-xl font-medium '>Type: </span>{job.job_category}</li>
                         <li><span className='text-xl font-medium'>Salary: </span>{job.salary_range}</li>
                         <li><span className='text-xl font-medium '>Deadline: </span>{job.deadline}</li>
-                        <li><span className='text-xl font-medium'>Post Date: </span>1 May 2024</li>
+                        <li className='mt-3 flex items-center gap-2'><span className='text-xl font-medium'>Post Date: </span>
+                        {
+                           job.date ? <p>{job.date}</p>
+                           :
+                           <p>10 May 2024</p>
+                        }
+                        </li>
                          
                        </div>
                         <div className="card-actions mt-3 justify-end">
-                         <Link to={`/details/${job._id}`}><button className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">View Details</button>
+                         <Link to={`/details/${job._id}`}><motion.button 
+                         whileTap={{scale :0.9}}
+                         whileHover={{
+                             scale:1.1,
+                             backgroundColor:"#ffff",
+                             color:"#5BBC2E",
+                             borderColor:"#5BBC2E"
+                         }}
+                         style={{
+                             border: '2px solid transparent',
+                             borderRadius: '10px',
+                             padding: '10px 15px',
+                             cursor: 'pointer',
+                             outline: 'none',
+                             transition: 'border-color 0.3s ease-in-out, color 0.3s ease-in-out',
+                           }}
+                         className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">View Details</motion.button>
                        
                          </Link>
                          </div>
@@ -123,7 +146,13 @@ const JobsByCategory = () => {
                         <li><span className='text-xl font-medium '>Type: </span>{job.job_category}</li>
                         <li><span className='text-xl font-medium'>Salary: </span>{job.salary_range}</li>
                         <li><span className='text-xl font-medium '>Deadline: </span>{job.deadline}</li>
-                        <li><span className='text-xl font-medium'>Post Date: </span>1 May 2024</li>
+                        <li className='mt-3 flex items-center gap-2'><span className='text-xl font-medium'>Post Date: </span>
+                        {
+                           job.date ? <p>{job.date}</p>
+                           :
+                           <p>10 May 2024</p>
+                        }
+                        </li>
                          
                        </div>
                         <div className="card-actions justify-end">
@@ -152,7 +181,13 @@ const JobsByCategory = () => {
                         <li><span className='text-xl font-medium '>Type: </span>{job.job_category}</li>
                         <li><span className='text-xl font-medium'>Salary: </span>{job.salary_range}</li>
                         <li><span className='text-xl font-medium '>Deadline: </span>{job.deadline}</li>
-                        <li><span className='text-xl font-medium'>Post Date: </span>1 May 2024</li>
+                        <li className='mt-3 flex items-center gap-2'><span className='text-xl font-medium'>Post Date: </span>
+                        {
+                           job.date ? <p>{job.date}</p>
+                           :
+                           <p>10 May 2024</p>
+                        }
+                        </li>
                          
                        </div>
                         <div className="card-actions justify-end">
@@ -181,7 +216,13 @@ const JobsByCategory = () => {
                         <li><span className='text-xl font-medium '>Type: </span>{job.job_category}</li>
                         <li><span className='text-xl font-medium'>Salary: </span>{job.salary_range}</li>
                         <li><span className='text-xl font-medium '>Deadline: </span>{job.deadline}</li>
-                        <li><span className='text-xl font-medium'>Post Date: </span>1 May 2024</li>
+                        <li className='mt-3 flex items-center gap-2'><span className='text-xl font-medium'>Post Date: </span>
+                        {
+                           job.date ? <p>{job.date}</p>
+                           :
+                           <p>10 May 2024</p>
+                        }
+                        </li>
                          
                        </div>
                         <div className="card-actions justify-end">

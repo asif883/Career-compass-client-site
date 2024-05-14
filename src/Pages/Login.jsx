@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/Context";
+import { motion } from "framer-motion"
 
 const Login = () => {
 
@@ -105,7 +106,22 @@ const Login = () => {
                     </div>
                
                 <div className="form-control mt-6">
-                <button className="w-full border-2 mr-4  px-4  rounded-lg py-3 bg-[#5BBC2E] text-white  font-semibold">Login</button>
+                <motion.button whileTap={{scale :0.9}}
+                        whileHover={{
+                            scale:1.1,
+                            backgroundColor:"#ffff",
+                            color:"#5BBC2E",
+                            borderColor:"#5BBC2E"
+                        }}
+                        style={{
+                            border: '2px solid transparent',
+                            borderRadius: '10px',
+                            padding: '10px 15px',
+                            cursor: 'pointer',
+                            outline: 'none',
+                            transition: 'border-color 0.3s ease-in-out, color 0.3s ease-in-out',
+                          }}
+                className="w-full border-2 mr-4  px-4  rounded-lg py-3 bg-[#5BBC2E] text-white  font-semibold">Login</motion.button>
                 </div>
                 
                 <label className="label">
