@@ -27,20 +27,20 @@ const Banner = () => {
                       
         <SwiperSlide className='relative '>
          <div className='absolute w-full h-full bg-gradient-to-l from-transparent to-black opacity-100'>
-         <div className='absolute top-1/3 left-20'>
+         <div className='absolute top-10 lg:top-1/3 left-10 lg:left-20'>
           
-          <h1 className="text-3xl lg:text-6xl text-white font-semibold mb-4">Find worlds <br />best job For Yourself</h1>
-          <h3 className="text-xl lg:text-3xl font-medium text-gray-300">Find the best remote job opportunities with trustworthy <br /> companies that offer work-from-home positions.</h3>
+          <h1 className="text-2xl lg:text-6xl text-white font-semibold mb-1 lg:mb-4">Find worlds <br />best job For Yourself</h1>
+          <h3  className="text-lg lg:text-3xl font-medium text-gray-300">Find the best remote job opportunities with trustworthy <br /> companies that offer work-from-home positions.</h3>
 
 
-          <div className='flex max-w-3xl gap-4 items-center bg-base-100 p-4 rounded-lg mt-3'>
-          <label className="input border-green-400 px-6 py-4 flex items-center gap-2">
+          <div className='flex flex-col lg:flex-row max-w-xs lg:max-w-3xl gap-4 items-center bg-base-100  p-2 lg:p-4 rounded-lg mt-1 lg:mt-3'>
+          <label className="input border-green-400 px-4 lg:px-6 py-2 lg:py-4 flex items-center gap-2">
               <input type="text" className="grow" placeholder="Key Words" />
           </label>
-           <label>
-             <input type="text" placeholder="Category" className="input border-green-400 w-full px-6 py-4 " />
+           <label className='hidden lg:block'>
+             <input type="text" placeholder="Category" className="input border-green-400 lg:w-full px-6 py-4 " />
            </label>
-           <button className='flex items-center bg-[#5BBC2E] px-6 py-3 rounded-lg font-semibold text-lg text-white hover:bg-white hover:border hover:border-green-500 hover:text-green-600 '><span className='text-xl mr-2'><MdOutlineSearch /></span> Find Job</button>
+           <button className='flex items-center bg-[#5BBC2E] px-3 lg:px-6 py-1 lg:py-3 rounded-lg font-semibold text-lg text-white hover:bg-white hover:border hover:border-green-500 hover:text-green-600 '><span className='text-xl mr-2'><MdOutlineSearch /></span> Find Job</button>
           </div>
         </div>
          </div>
@@ -50,22 +50,22 @@ const Banner = () => {
 
         <SwiperSlide className='relative'>
         <div className='absolute w-full h-full bg-gradient-to-l from-transparent to-black opacity-100'>
-         <div className='absolute top-1/3 left-20'>
+         <div className='absolute top-10 lg:top-1/3 left-10 lg:left-20'>
           
-          <h1 className="text-3xl lg:text-6xl text-white font-semibold mb-4">Join us
+          <h1 className="text-2xl lg:text-6xl text-white font-semibold mb-1 lg:mb-4">Join us
            & Explore
            <br /> thousands of Jobs</h1>
-          <h3 className="text-xl lg:text-3xl font-medium text-gray-300">Find the best remote job opportunities with trustworthy <br /> companies that offer work-from-home positions.</h3>
+          <h3 className="text-lg lg:text-3xl font-medium text-gray-300">Find the best remote job opportunities with trustworthy <br /> companies that offer work-from-home positions.</h3>
 
 
-          <div className='flex max-w-3xl gap-4 items-center bg-base-100 p-4 rounded-lg mt-3'>
-          <label className="input border-green-400 px-6 py-4 flex items-center gap-2">
+          <div className='flex flex-col lg:flex-row max-w-xs lg:max-w-3xl gap-4 items-center bg-base-100  p-2 lg:p-4 rounded-lg mt-1 lg:mt-3'>
+          <label className="input border-green-400 px-4 lg:px-6 py-2 lg:py-4 flex items-center gap-2">
               <input type="text" className="grow" placeholder="Key Words" />
           </label>
-           <label>
+           <label className='hidden lg:block'>
              <input type="text" placeholder="Category" className="input border-green-400 w-full px-6 py-4 " />
            </label>
-           <button className='flex items-center bg-[#5BBC2E] px-6 py-3 rounded-lg font-semibold text-lg text-white hover:bg-white hover:border hover:border-green-500 hover:text-green-600 '><span className='text-xl mr-2'><MdOutlineSearch /></span>Find Job</button>
+           <button className='flex items-center bg-[#5BBC2E] px-3 lg:px-6 py-1 lg:py-3 rounded-lg font-semibold text-lg text-white hover:bg-white hover:border hover:border-green-500 hover:text-green-600 '><span className='text-xl mr-2'><MdOutlineSearch /></span>Find Job</button>
           </div>
         </div>
          </div>
@@ -75,20 +75,20 @@ const Banner = () => {
 
         <SwiperSlide className='relative '>
         <div className='absolute w-full h-full bg-gradient-to-l from-transparent to-black opacity-100'>
-         <div className='absolute top-1/3 left-20'>
+         <div className='absolute top-10 lg:top-1/3 left-10 lg:left-20'>
           
-          <h1 className="text-3xl lg:text-6xl text-white font-semibold mb-4">Find worlds <br />best job For Yourself</h1>
-          <h3 className="text-xl lg:text-3xl font-medium text-gray-300">Find the best remote job opportunities with trustworthy <br /> companies that offer work-from-home positions.</h3>
+          <h1 className="text-2xl lg:text-6xl text-white font-semibold mb-1 lg:mb-4">Find worlds <br />best job For Yourself</h1>
+          <h3 className="text-lg lg:text-3xl font-medium text-gray-300">Find the best remote job opportunities with trustworthy <br /> companies that offer work-from-home positions.</h3>
 
 
-          <div className='flex max-w-3xl gap-4 items-center bg-base-100 p-4 rounded-lg mt-3'>
-          <label className="input border-green-400 px-6 py-4 flex items-center gap-2">
+          <div className='flex flex-col lg:flex-row max-w-xs lg:max-w-3xl gap-4 items-center bg-base-100  p-2 lg:p-4 rounded-lg mt-1 lg:mt-3'>
+          <label className="input border-green-400 px-4 lg:px-6 py-2 lg:py-4 flex items-center gap-2">
               <input type="text" className="grow" placeholder="Key Words" />
           </label>
-           <label>
+           <label className='hidden lg:block'>
              <input type="text" placeholder="Category" className="input border-green-400 w-full px-6 py-4 " />
            </label>
-           <button className='flex items-center bg-[#5BBC2E] px-6 py-3 rounded-lg font-semibold text-lg text-white hover:bg-white hover:border hover:border-green-500 hover:text-green-600 '><span className='text-xl mr-2'><MdOutlineSearch /></span> Find Job</button>
+           <button className='flex items-center bg-[#5BBC2E] px-3 lg:px-6 py-1 lg:py-3 rounded-lg font-semibold text-lg text-white hover:bg-white hover:border hover:border-green-500 hover:text-green-600 '><span className='text-xl mr-2'><MdOutlineSearch /></span> Find Job</button>
           </div>
         </div>
          </div>

@@ -83,7 +83,7 @@ const Navbar = () => {
                         </ul>
                        </div>
                         :
-                        <div>
+                        <div className="text-end">
                         <Link to='register'><motion.button 
                         whileTap={{scale :0.9}}
                         whileHover={{
@@ -100,7 +100,7 @@ const Navbar = () => {
                             outline: 'none',
                             transition: 'border-color 0.2s ease-in-out, color 0.2s ease-in-out',
                           }}
-                         className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white mr-4">Register</motion.button>
+                         className="bg-[#5BBC2E] px-2 lg:px-4 py-2 rounded-lg font-semibold text-lg text-white mb-1 lg:mr-4">Register</motion.button>
                         </Link>
                         <Link to='/login'><motion.button whileTap={{scale :0.9}}
                         whileHover={{
@@ -117,7 +117,7 @@ const Navbar = () => {
                             outline: 'none',
                             transition: 'border-color 0.3s ease-in-out, color 0.3s ease-in-out',
                           }}
-                         className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">Login</motion.button>
+                         className="bg-[#5BBC2E] px-2 lg:px-4 py-2 rounded-lg font-semibold text-lg text-white">Login</motion.button>
                         </Link>
                       </div>
 

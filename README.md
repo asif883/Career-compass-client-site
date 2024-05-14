@@ -1,8 +1,28 @@
-# React + Vite
+# Career - compass
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Live-Link :
 
-Currently, two official plugins are available:
+## Feature:
+1. Best Job Finding source
+2. More then 1K+ remote ,on-site and part time job
+3. Easy to find best job option
+4. Anyone can post job for his/her company
+5. Responsive for all device
+ 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ ## Frame-Work that's use in this website:
+1. Vite+ React
+2. Tailwind
+3. Daisy
+
+
+## React Packages
+
+1. React-Awesome-Reveal
+2. Framer Motion Package
+
+
+### Others:
+1. Theme Toggling (Light and Dark theme)
+2. Swiper Slider in Banner 
+3. Using JWT to make data more secure

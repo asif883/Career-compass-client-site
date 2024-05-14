@@ -58,7 +58,7 @@ const JobDetails = () => {
     return (
         <div className="max-w-7xl mx-auto">
             <div className="mt-8">
-               <div className="flex gap-7">
+               <div className="flex flex-col lg:flex-row gap-7">
                 <img className="w-[400px] h-[450px] rounded-lg" src={banner} alt="" />
                 <div className="space-y-4">
                     <h1 className="text-4xl font-bold">{job_title}</h1>

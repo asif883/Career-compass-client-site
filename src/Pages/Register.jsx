@@ -80,7 +80,7 @@ const Register = () => {
 
 
     return (
-        <div className="flex items-center max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center max-w-7xl mx-auto">
             
             <div className="flex-1">
                 <img src="https://i.ibb.co/qyVw6GG/Sign-up-rafiki.png" alt="" />

@@ -70,7 +70,7 @@ const Login = () => {
      }
 
     return (
-        <div className="flex items-center max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center max-w-7xl mx-auto">
           <div className="flex-1">
             <img className="h-4/6 w-4/5" src="https://i.ibb.co/LJ70cNL/Tablet-login-cuate.png" alt="" />
         </div>  
