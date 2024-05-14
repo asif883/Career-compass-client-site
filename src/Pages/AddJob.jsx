@@ -24,12 +24,12 @@ const AddJob = () => {
 
       const jobInfo ={job_title,job_category,banner,deadline,salary_range,number,email,name,job_description,date}
 
-      console.log(jobInfo)
+      // console.log(jobInfo)
 
-      axios.post('http://localhost:5000/jobs',jobInfo)
+      axios.post('https://career-compass-psi.vercel.app/jobs',jobInfo)
       .then(res =>{
         const data= res.data
-        console.log(data)
+        // console.log(data)
         if(data.insertedId){
           Swal.fire({
             title: 'Success!',

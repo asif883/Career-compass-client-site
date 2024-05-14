@@ -8,13 +8,13 @@ const AppliedJobs = () => {
     const [appliedJobs , setAppliedJobs] = useState([]);
 
     useEffect(()=>{
-       fetch(`http://localhost:5000/appliedJobs/${user?.email}`,{credentials: 'include'})
+       fetch(`https://career-compass-psi.vercel.app/appliedJobs/${user?.email}`,{credentials: 'include'})
        .then(res => res.json())
        .then(data => setAppliedJobs(data))
 
     },[user])
    
-    console.log(appliedJobs) 
+    // console.log(appliedJobs) 
     // const {name,email,job_title,banner,job_category} =appliedJobs;
     return (
        <div className="max-w-7xl mx-auto mt-10">

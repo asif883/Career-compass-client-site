@@ -7,10 +7,10 @@ const Profile = () => {
 
     const{ user ,logOut} = useContext(AuthContext);
     const [appliedJobs , setAppliedJobs] = useState([]);
-    console.log(appliedJobs)
+    // console.log(appliedJobs)
 
     useEffect(()=>{
-       fetch(`http://localhost:5000/appliedJobs/${user?.email}`,{credentials: 'include'})
+       fetch(`https://career-compass-psi.vercel.app/appliedJobs/${user?.email}`,{credentials: 'include'})
        .then(res => res.json())
        .then(data => setAppliedJobs(data))
 

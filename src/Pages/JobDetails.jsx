@@ -18,9 +18,9 @@ const JobDetails = () => {
         
         const appliedJobsInfo ={name,resume,email,job_title,banner,job_category}
          
-        console.log(appliedJobsInfo);
+        
 
-        axios.post('http://localhost:5000/appliedJobs', appliedJobsInfo)
+        axios.post('https://career-compass-psi.vercel.app/appliedJobs', appliedJobsInfo)
         .then(res =>{
             const data = res.data;
               if(data.insertedId){
@@ -50,8 +50,8 @@ const JobDetails = () => {
       const [currentDate, setCurrentDate] = useState(getDate());
       
     
-      console.log(currentDate)
-      console.log(deadline)      
+    //   console.log(currentDate)
+    //   console.log(deadline)      
     //   if(deadline === currentDate){
     //      return <>Applied date is over</>
     //   }

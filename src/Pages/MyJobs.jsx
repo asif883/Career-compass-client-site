@@ -11,13 +11,13 @@ const MyJobs = () => {
     const [myJObs , setMyJobs] = useState([]);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/myJobs/${user?.email}`, {credentials: 'include'})
+        fetch(`https://career-compass-psi.vercel.app/myJobs/${user?.email}`, {credentials: 'include'})
         .then(res=> res.json())
         .then(data => setMyJobs(data))
     },[user]);
 
     const handleDelete = _id =>{
-        console.log(_id)
+        // console.log(_id)
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -29,12 +29,12 @@ const MyJobs = () => {
           }).then((result) => {
          
             if(result.isConfirmed){
-                fetch(`http://localhost:5000/myJobs/${_id}`,{
+                fetch(`https://career-compass-psi.vercel.app/myJobs/${_id}`,{
                         method: "DELETE"
                 })
                 .then(res => res.json())
                 .then(data =>{
-                      console.log(data);
+                    //   console.log(data);
                       if(data.deletedCount > 0 ){
                         Swal.fire({
                             title: "Deleted!",

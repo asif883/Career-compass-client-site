@@ -8,7 +8,7 @@ import { useLoaderData } from "react-router-dom";
 const Update = () => {
      const updateJob = useLoaderData()
 
-     console.log(updateJob)
+    //  console.log(updateJob)
 
      const {_id,job_title,job_category,banner,deadline,salary_range,number,job_description} = updateJob;
 
@@ -28,11 +28,11 @@ const Update = () => {
   
         const UpdateJobInfo = {job_title,job_category,banner,deadline,salary_range,number,email,name,job_description}
   
-        console.log(UpdateJobInfo)
+        // console.log(UpdateJobInfo)
 
 
 
-        fetch(`http://localhost:5000/updateJob/${_id}`,{
+        fetch(`https://career-compass-psi.vercel.app/updateJob/${_id}`,{
             method: 'PUT',
             headers:{
                 'content-type': 'application/json'
@@ -42,7 +42,7 @@ const Update = () => {
         })
         .then(res => res.json())
         .then(data =>{
-            console.log(data)
+            // console.log(data)
             if(data.modifiedCount>0){
                 Swal.fire({
                     title: 'Success!',
@@ -53,7 +53,7 @@ const Update = () => {
                 }
         })
   
-        // axios.put(`http://localhost:5000/updateJob/${_id}`,UpdateJobInfo)
+        // axios.put(`https://career-compass-psi.vercel.app/updateJob/${_id}`,UpdateJobInfo)
         // .then(res =>{
         //   const data= res.data
         //   console.log(data)

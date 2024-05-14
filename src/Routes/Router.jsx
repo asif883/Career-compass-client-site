@@ -40,7 +40,7 @@ const Router = createBrowserRouter([
         {
           path: '/details/:id',
           element: <PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/jobs/${params.id}`)
+          loader: ({params}) => fetch(`https://career-compass-psi.vercel.app/jobs/${params.id}`)
         },
        
         {
@@ -50,7 +50,7 @@ const Router = createBrowserRouter([
         {
           path:'/all-jobs',
           element:<AllJobs></AllJobs>,
-          loader: ()=> fetch('http://localhost:5000/jobs')
+          loader: ()=> fetch('https://career-compass-psi.vercel.app/jobs')
         },
         {
           path:'/blogs',
@@ -67,7 +67,7 @@ const Router = createBrowserRouter([
         {
           path: '/update/:id',
           element:<Update></Update>,
-          loader: ({params}) => fetch(`http://localhost:5000/jobs/${params.id}`)
+          loader: ({params}) => fetch(`https://career-compass-psi.vercel.app/jobs/${params.id}`)
         }
       ]
     },

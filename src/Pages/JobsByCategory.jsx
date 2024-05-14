@@ -20,11 +20,11 @@ const JobsByCategory = () => {
     const [jobs, setJobs] =useState([]);
 
     useEffect(()=>{
-           fetch('http://localhost:5000/jobs') 
+           fetch('https://career-compass-psi.vercel.app/jobs') 
            .then(res => res.json())
            .then(data => setJobs(data))
     },[])
-   console.log(jobs)
+  //  console.log(jobs)
 
    
    const handleFilterText = filter =>{

@@ -25,7 +25,7 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
         
-            console.log (email, password);
+            // console.log (email, password);
         
             const regExp =/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/
             if(password === ""){
