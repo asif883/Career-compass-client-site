@@ -8,7 +8,7 @@ const AppliedJobs = () => {
     const [appliedJobs , setAppliedJobs] = useState([]);
 
     useEffect(()=>{
-       fetch(`http://localhost:5000/appliedJobs/${user?.email}`)
+       fetch(`http://localhost:5000/appliedJobs/${user?.email}`,{credentials: 'include'})
        .then(res => res.json())
        .then(data => setAppliedJobs(data))
 

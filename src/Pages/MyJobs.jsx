@@ -11,7 +11,7 @@ const MyJobs = () => {
     const [myJObs , setMyJobs] = useState([]);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/myJobs/${user?.email}`)
+        fetch(`http://localhost:5000/myJobs/${user?.email}`, {credentials: 'include'})
         .then(res=> res.json())
         .then(data => setMyJobs(data))
     },[user]);

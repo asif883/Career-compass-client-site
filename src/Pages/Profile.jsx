@@ -7,9 +7,10 @@ const Profile = () => {
 
     const{ user ,logOut} = useContext(AuthContext);
     const [appliedJobs , setAppliedJobs] = useState([]);
+    console.log(appliedJobs)
 
     useEffect(()=>{
-       fetch(`http://localhost:5000/appliedJobs/${user?.email}`)
+       fetch(`http://localhost:5000/appliedJobs/${user?.email}`,{credentials: 'include'})
        .then(res => res.json())
        .then(data => setAppliedJobs(data))
 
@@ -45,8 +46,8 @@ const Profile = () => {
                 </div>
 
                  <div className="mt-10">
-                   <h1 className="text-2xl font-bold ">Name: {user.displayName}</h1>
-                   <p className="text-xl mt-2 font-semibold mb-5"> Applied Jobs: {appliedJobs.length}
+                   <h1 className="text-2xl font-bold ">Name: {user?.displayName}</h1>
+                   <p className="text-xl mt-2 font-semibold mb-5"> Applied Jobs: {appliedJobs?.length}
                    <Link className="ml-3 text-green-500 underline" to='/applied-jobs'>Check</Link></p>
 
                    <Link ><button onClick={handleLogout} className="bg-[#5BBC2E] px-4 py-2 rounded-lg font-semibold text-lg text-white">Sing Out</button>
