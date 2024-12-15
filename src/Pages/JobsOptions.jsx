@@ -10,7 +10,7 @@ const JobsOptions = () => {
                   <Slide className="flex-1" direction="left">
                   <div className=" relative">
                     <img src="https://i.ibb.co/PFqQSrn/work.jpg" alt="" />
-                     <div className="absolute top-3/4 -right-1/4">
+                     <div className="absolute top-3/4 left-1/3 md:-right-1/4">
                         <img src="https://i.ibb.co/3d2jfR3/employers.png" alt="" />
                      </div>
                  </div>

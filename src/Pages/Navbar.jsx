@@ -27,31 +27,61 @@ const Navbar = () => {
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <ul className="menu menu-horizontal px-1 pt-4">
-                    <NavLink className='text-lg font-semibold mr-4' to="/"><li>Home</li></NavLink> <br />
-                    <NavLink className='text-lg font-semibold mr-4' to="/all-jobs"><li>All Jobs</li></NavLink><br />
-                    <NavLink className='text-lg font-semibold mr-4' to="/applied-jobs"><li> Applied Jobs</li></NavLink><br />
-                    <NavLink className='text-lg font-semibold mr-4' to="/add-job"><li>Add A Job</li></NavLink><br />
-                    <NavLink className='text-lg font-semibold mr-4' to="/my-jobs"><li> My Jobs</li></NavLink><br />
-                    <NavLink className='text-lg font-semibold mr-4' to="/blogs"><li>Blogs</li></NavLink><br />
-                    <NavLink className='text-lg font-semibold' to="/profile"><li> Profile</li></NavLink>
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow bg-base-100 rounded-box w-52 ">
+                    <ul className="menu menu-horizontal px-1 flex flex-col  ">
+                    <li>
+                        <Link className='text-lg font-semibold' to="/">Home</Link>
+                    </li>
+                    
+                    <li>
+                        <Link className='text-lg font-semibold' to="/all-jobs">All Jobs</Link>
+                    </li>
+                      {
+                        user &&
+                        <ul>
+                            <li>
+                                <Link className='text-lg font-semibold' to="/applied-jobs"> Applied Jobs</Link>
+                            </li>
+
+                            <li>
+                               <Link className='text-lg font-semibold' to="/my-jobs"> My Jobs</Link>
+                            </li>
+                            <li>
+                                <Link className='text-lg font-semibold' to="/profile"> Profile</Link>
+                            </li>
+                        </ul>
+                        
+                      }
+                    
+                    
+                    <li>
+                        <Link className='text-lg font-semibold' to="/add-job">Add A Job</Link>
+                    </li>
+                    
+                    
+                   
+                    <li>
+                        <Link className='text-lg font-semibold' to="/blogs">Blogs</Link>
+                    </li>
+                    
+                    
+                   
                     </ul>
                     </ul>
                     </div>
-                    <Link to='/' className="text-4xl font-bold"><span className="text-[#5BBC2E]">Car</span>eer<span className="text-[#5BBC2E]">-</span>Compa<span className="text-[#5BBC2E]">ss</span></Link>
+                    <Link to='/' className="text-2xl md:text-4xl font-bold"><span className="text-[#5BBC2E]">Car</span>eer<span className="text-[#5BBC2E]">-</span>Compa<span className="text-[#5BBC2E]">ss</span></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 pt-4">
                     <NavLink className='text-lg font-medium mr-4 hover:underline' to="/"><li>Home</li></NavLink>
                     <NavLink className='text-lg font-medium mr-4 hover:underline' to="/all-jobs"><li>All Jobs</li></NavLink>
-                    <NavLink className='text-lg font-medium mr-4 hover:underline' to="/applied-jobs"><li> Applied Jobs</li></NavLink>
-                   
+                    
+                    <NavLink className='text-lg font-medium mr-4 hover:underline' to="/add-job"><li>Add A Job</li></NavLink>
 
                      {
                         user ? <div className="flex">
-                             
-                            <NavLink className='text-lg font-medium mr-4 hover:underline' to="/add-job"><li>Add A Job</li></NavLink>
+                            <NavLink className='text-lg font-medium mr-4 hover:underline' to="/applied-jobs"><li> Applied Jobs</li></NavLink>
+                            
                             <NavLink className='text-lg font-medium mr-4 hover:underline' to="/my-jobs"><li> My Jobs</li></NavLink>
                             <NavLink className='text-lg font-medium mr-4 hover:underline' to="/profile"><li> Profile</li></NavLink>
                             
@@ -100,7 +130,7 @@ const Navbar = () => {
                             outline: 'none',
                             transition: 'border-color 0.2s ease-in-out, color 0.2s ease-in-out',
                           }}
-                         className="bg-[#5BBC2E] px-2 lg:px-4 py-2 rounded-lg font-semibold text-lg text-white mb-1 lg:mr-4">Register</motion.button>
+                         className="bg-[#5BBC2E] px-2 md:px-3 py-1 md:py-2 rounded-lg font-semibold text-sm md:text-lg text-white mb-1 mr-1 md:mr-3">Register</motion.button>
                         </Link>
                         <Link to='/login'><motion.button whileTap={{scale :0.9}}
                         whileHover={{
@@ -117,7 +147,7 @@ const Navbar = () => {
                             outline: 'none',
                             transition: 'border-color 0.3s ease-in-out, color 0.3s ease-in-out',
                           }}
-                         className="bg-[#5BBC2E] px-2 lg:px-4 py-2 rounded-lg font-semibold text-lg text-white">Login</motion.button>
+                         className="bg-[#5BBC2E] px-2 md:px-3 py-1 md:py-2 rounded-lg font-semibold  text-sm md:text-lg text-white">Login</motion.button>
                         </Link>
                       </div>
 

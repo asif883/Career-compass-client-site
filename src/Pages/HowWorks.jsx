@@ -16,10 +16,10 @@ const HowWorks = () => {
                     <p className="text-gray-500 text-lg mt-2">Job for anyone, anywhere</p>
                 </div>
 
-                <Zoom delay={3}>
+                <Zoom>
                 <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
                 {/*  */}
-                <div className="card w-96  hover:shadow-xl">
+                <div className="card  hover:shadow-xl">
                         <figure className="px-10 pt-10">
                         <img src="https://i.ibb.co/SnBB6w7/f1.jpg" alt="Shoes" className="rounded-full" />
                     </figure>
@@ -33,7 +33,7 @@ const HowWorks = () => {
                 </div>
                 {/*  */}
                 {/*  */}
-                <div className="card w-96  hover:shadow-xl">
+                <div className="card   hover:shadow-xl">
                         <figure className="px-10 pt-10">
                         <img src="https://i.ibb.co/DtpJq1k/f2.jpg" alt="Shoes" className="rounded-full" />
                     </figure>
@@ -45,7 +45,7 @@ const HowWorks = () => {
                 </div>
                 {/*  */}
                 {/*  */}
-                <div className="card w-96  hover:shadow-xl">
+                <div className="card hover:shadow-xl">
                         <figure className="px-10 pt-10">
                         <img src="https://i.ibb.co/KsnbfV9/f3.png" alt="Shoes" className="rounded-full" />
                     </figure>

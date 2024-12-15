@@ -21,7 +21,7 @@ const Banner = () => {
       }}
       navigation={true}
       modules={[Pagination, Navigation]}
-        className="mySwiper h-[350px] lg:h-[700px]"
+        className="mySwiper h-[350px] lg:h-[700px] z-50"
       >
      
                       
